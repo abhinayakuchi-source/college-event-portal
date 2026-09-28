@@ -41,7 +41,6 @@ college-event-portal/
 └── images/
     ├── eventimage1.jpg
     └── eventimage2.jpg
-
 ## 🖼️ Images
 
 The project uses two local images stored inside the `images` folder.
