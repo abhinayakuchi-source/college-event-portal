@@ -1,19 +1,10 @@
-/* =====================================================
-   HACKSPHERE 2026
-   JAVASCRIPT
-===================================================== */
-
-
-/* =====================================================
-   ANNOUNCEMENTS
-===================================================== */
+/* ================= ANNOUNCEMENTS ================= */
 
 const announcements = [
-    "Registration is now open for HackSphere 2026!",
-    "HackSphere Hackathon registrations are filling fast!",
-    "Project Expo participants can register now.",
-    "Get ready for an exciting day of technology and culture!",
-    "All registered participants should report before their event."
+    "Registrations are now open for HackSphere 2026!",
+    "HackSphere Hackathon registrations are available now.",
+    "Project Expo participants can register through the portal.",
+    "Get ready for an exciting day of technology, culture and sports!"
 ];
 
 let announcementIndex = 0;
@@ -21,50 +12,28 @@ let announcementIndex = 0;
 const announcementText =
     document.getElementById("announcementText");
 
-const announcementBtn =
-    document.getElementById("announcementBtn");
+const rotateAnnouncement =
+    document.getElementById("rotateAnnouncement");
 
+if (rotateAnnouncement) {
 
-function updateAnnouncement() {
+    rotateAnnouncement.addEventListener("click", function () {
 
-    announcementIndex++;
+        announcementIndex++;
 
-    if (announcementIndex >= announcements.length) {
-        announcementIndex = 0;
-    }
-
-    announcementText.style.opacity = "0";
-
-    setTimeout(() => {
+        if (announcementIndex >= announcements.length) {
+            announcementIndex = 0;
+        }
 
         announcementText.textContent =
             announcements[announcementIndex];
 
-        announcementText.style.opacity = "1";
-
-    }, 200);
+    });
 
 }
 
 
-if (announcementBtn) {
-
-    announcementBtn.addEventListener(
-        "click",
-        updateAnnouncement
-    );
-
-}
-
-
-/* Automatically rotate */
-
-setInterval(updateAnnouncement, 5000);
-
-
-/* =====================================================
-   EVENT FILTER
-===================================================== */
+/* ================= EVENT FILTER ================= */
 
 const filterButtons =
     document.querySelectorAll(".filter-btn");
@@ -72,51 +41,34 @@ const filterButtons =
 const eventItems =
     document.querySelectorAll(".event-item");
 
+filterButtons.forEach(function(button) {
 
-filterButtons.forEach(button => {
+    button.addEventListener("click", function() {
 
-    button.addEventListener("click", () => {
-
-        /* Remove active */
-
-        filterButtons.forEach(btn => {
+        filterButtons.forEach(function(btn) {
             btn.classList.remove("active");
         });
 
-        /* Add active */
+        this.classList.add("active");
 
-        button.classList.add("active");
+        const selectedCategory =
+            this.getAttribute("data-filter");
 
-        const filter =
-            button.getAttribute("data-filter");
+        eventItems.forEach(function(eventItem) {
 
-
-        eventItems.forEach(item => {
-
-            const category =
-                item.getAttribute("data-category");
-
+            const eventCategory =
+                eventItem.getAttribute("data-category");
 
             if (
-                filter === "all" ||
-                category === filter
+                selectedCategory === "all" ||
+                selectedCategory === eventCategory
             ) {
 
-                item.style.display = "block";
-
-                setTimeout(() => {
-                    item.style.opacity = "1";
-                    item.style.transform = "translateY(0)";
-                }, 20);
+                eventItem.style.display = "block";
 
             } else {
 
-                item.style.opacity = "0";
-                item.style.transform = "translateY(15px)";
-
-                setTimeout(() => {
-                    item.style.display = "none";
-                }, 200);
+                eventItem.style.display = "none";
 
             }
 
@@ -127,244 +79,235 @@ filterButtons.forEach(button => {
 });
 
 
-/* =====================================================
-   SELECT EVENT
-===================================================== */
+/* ================= SELECT EVENT ================= */
 
 function selectEvent(eventName) {
 
     const eventSelect =
-        document.getElementById("selectedEvent");
+        document.getElementById("event");
 
-    eventSelect.value = eventName;
+    if (eventSelect) {
 
-    document
-        .getElementById("registration")
-        .scrollIntoView({
+        eventSelect.value = eventName;
+
+    }
+
+    const registrationSection =
+        document.getElementById("registration");
+
+    if (registrationSection) {
+
+        registrationSection.scrollIntoView({
             behavior: "smooth"
         });
+
+    }
 
 }
 
 
-/* =====================================================
-   REGISTRATION FORM
-===================================================== */
+/* ================= REGISTRATION VALIDATION ================= */
 
 const registrationForm =
     document.getElementById("registrationForm");
 
+if (registrationForm) {
 
-registrationForm.addEventListener(
-    "submit",
-    function(event) {
+    registrationForm.addEventListener(
+        "submit",
+        function(event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-
-        /* Values */
-
-        const name =
-            document.getElementById("fullName").value.trim();
-
-        const email =
-            document.getElementById("email").value.trim();
-
-        const mobile =
-            document.getElementById("mobile").value.trim();
-
-        const department =
-            document.getElementById("department").value;
-
-        const year =
-            document.getElementById("year").value;
-
-        const selectedEvent =
-            document.getElementById("selectedEvent").value;
+            let isValid = true;
 
 
-        /* Error elements */
+            /* GET VALUES */
 
-        const nameError =
-            document.getElementById("nameError");
+            const fullName =
+                document.getElementById("fullName").value.trim();
 
-        const emailError =
-            document.getElementById("emailError");
+            const email =
+                document.getElementById("email").value.trim();
 
-        const mobileError =
-            document.getElementById("mobileError");
+            const mobile =
+                document.getElementById("mobile").value.trim();
 
-        const departmentError =
-            document.getElementById("departmentError");
+            const department =
+                document.getElementById("department").value;
 
-        const yearError =
-            document.getElementById("yearError");
+            const year =
+                document.getElementById("year").value;
 
-        const eventError =
-            document.getElementById("eventError");
-
-
-        /* Clear errors */
-
-        nameError.textContent = "";
-        emailError.textContent = "";
-        mobileError.textContent = "";
-        departmentError.textContent = "";
-        yearError.textContent = "";
-        eventError.textContent = "";
+            const selectedEvent =
+                document.getElementById("event").value;
 
 
-        let isValid = true;
+            /* ERROR ELEMENTS */
+
+            const nameError =
+                document.getElementById("nameError");
+
+            const emailError =
+                document.getElementById("emailError");
+
+            const mobileError =
+                document.getElementById("mobileError");
+
+            const departmentError =
+                document.getElementById("departmentError");
+
+            const yearError =
+                document.getElementById("yearError");
+
+            const eventError =
+                document.getElementById("eventError");
 
 
-        /* Name validation */
+            /* CLEAR ERRORS */
 
-        if (name === "") {
+            nameError.textContent = "";
+            emailError.textContent = "";
+            mobileError.textContent = "";
+            departmentError.textContent = "";
+            yearError.textContent = "";
+            eventError.textContent = "";
 
-            nameError.textContent =
-                "Please enter your name.";
 
-            isValid = false;
+            /* NAME */
+
+            if (fullName === "") {
+
+                nameError.textContent =
+                    "Please enter your full name.";
+
+                isValid = false;
+
+            }
+
+
+            /* EMAIL */
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === "") {
+
+                emailError.textContent =
+                    "Please enter your email.";
+
+                isValid = false;
+
+            } else if (!emailPattern.test(email)) {
+
+                emailError.textContent =
+                    "Please enter a valid email.";
+
+                isValid = false;
+
+            }
+
+
+            /* MOBILE */
+
+            const mobilePattern =
+                /^[0-9]{10}$/;
+
+            if (mobile === "") {
+
+                mobileError.textContent =
+                    "Please enter your mobile number.";
+
+                isValid = false;
+
+            } else if (!mobilePattern.test(mobile)) {
+
+                mobileError.textContent =
+                    "Mobile number must contain 10 digits.";
+
+                isValid = false;
+
+            }
+
+
+            /* DEPARTMENT */
+
+            if (department === "") {
+
+                departmentError.textContent =
+                    "Please select your department.";
+
+                isValid = false;
+
+            }
+
+
+            /* YEAR */
+
+            if (year === "") {
+
+                yearError.textContent =
+                    "Please select your year.";
+
+                isValid = false;
+
+            }
+
+
+            /* EVENT */
+
+            if (selectedEvent === "") {
+
+                eventError.textContent =
+                    "Please select an event.";
+
+                isValid = false;
+
+            }
+
+
+            /* SUCCESS */
+
+            if (isValid) {
+
+                const successMessage =
+                    document.getElementById("successMessage");
+
+                successMessage.style.display = "block";
+
+                successMessage.innerHTML = `
+
+                    <i class="bi bi-check-circle-fill"></i>
+
+                    <h4>
+                        Registration Successful!
+                    </h4>
+
+                    <p>
+                        Thank you,
+                        <strong>${fullName}</strong>.
+                        You have successfully registered for
+                        <strong>${selectedEvent}</strong>.
+                    </p>
+
+                `;
+
+                registrationForm.reset();
+
+                successMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
 
         }
+    );
 
+}
 
-        /* Email validation */
 
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-        if (email === "") {
-
-            emailError.textContent =
-                "Please enter your email.";
-
-            isValid = false;
-
-        } else if (!emailPattern.test(email)) {
-
-            emailError.textContent =
-                "Please enter a valid email.";
-
-            isValid = false;
-
-        }
-
-
-        /* Mobile validation */
-
-        const mobilePattern =
-            /^[0-9]{10}$/;
-
-
-        if (mobile === "") {
-
-            mobileError.textContent =
-                "Please enter your mobile number.";
-
-            isValid = false;
-
-        } else if (!mobilePattern.test(mobile)) {
-
-            mobileError.textContent =
-                "Enter a valid 10-digit number.";
-
-            isValid = false;
-
-        }
-
-
-        /* Department */
-
-        if (department === "") {
-
-            departmentError.textContent =
-                "Please select your department.";
-
-            isValid = false;
-
-        }
-
-
-        /* Year */
-
-        if (year === "") {
-
-            yearError.textContent =
-                "Please select your year.";
-
-            isValid = false;
-
-        }
-
-
-        /* Event */
-
-        if (selectedEvent === "") {
-
-            eventError.textContent =
-                "Please select an event.";
-
-            isValid = false;
-
-        }
-
-
-        /* If valid */
-
-        if (isValid) {
-
-            const successMessage =
-                document.getElementById("successMessage");
-
-
-            successMessage.style.display = "flex";
-
-
-            /* Display registration information */
-
-            console.log("Registration Details:");
-
-            console.log("Name:", name);
-            console.log("Email:", email);
-            console.log("Mobile:", mobile);
-            console.log("Department:", department);
-            console.log("Year:", year);
-            console.log("Event:", selectedEvent);
-
-
-            /* Reset form */
-
-            registrationForm.reset();
-
-
-            /* Scroll to success message */
-
-            successMessage.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-
-            /* Hide after 6 seconds */
-
-            setTimeout(() => {
-
-                successMessage.style.display =
-                    "none";
-
-            }, 6000);
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   NAVBAR ACTIVE LINK
-===================================================== */
+/* ================= NAVBAR ACTIVE LINK ================= */
 
 const sections =
     document.querySelectorAll("section[id]");
@@ -372,25 +315,18 @@ const sections =
 const navLinks =
     document.querySelectorAll(".nav-link");
 
+window.addEventListener("scroll", function() {
 
-window.addEventListener("scroll", () => {
+    let currentSection = "";
 
-    let current = "";
-
-    sections.forEach(section => {
+    sections.forEach(function(section) {
 
         const sectionTop =
             section.offsetTop - 120;
 
-        const sectionHeight =
-            section.clientHeight;
+        if (window.scrollY >= sectionTop) {
 
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-
-            current =
+            currentSection =
                 section.getAttribute("id");
 
         }
@@ -398,14 +334,14 @@ window.addEventListener("scroll", () => {
     });
 
 
-    navLinks.forEach(link => {
+    navLinks.forEach(function(link) {
 
         link.classList.remove("active");
 
-        if (
-            link.getAttribute("href") ===
-            "#" + current
-        ) {
+        const href =
+            link.getAttribute("href");
+
+        if (href === "#" + currentSection) {
 
             link.classList.add("active");
 
@@ -416,31 +352,31 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* =====================================================
-   MOBILE NAVBAR CLOSE
-===================================================== */
+/* ================= MOBILE NAVBAR ================= */
 
-const navLinksMobile =
-    document.querySelectorAll(
-        ".navbar-nav .nav-link"
-    );
+const navLinksAll =
+    document.querySelectorAll(".navbar-nav .nav-link");
 
 const navbarCollapse =
-    document.getElementById("navbarNav");
+    document.getElementById("mainNavbar");
 
+navLinksAll.forEach(function(link) {
 
-navLinksMobile.forEach(link => {
-
-    link.addEventListener("click", () => {
+    link.addEventListener("click", function() {
 
         if (
             window.innerWidth < 992 &&
             navbarCollapse.classList.contains("show")
         ) {
 
-            new bootstrap.Collapse(
-                navbarCollapse
-            ).hide();
+            const bootstrapCollapse =
+                bootstrap.Collapse.getInstance(
+                    navbarCollapse
+                );
+
+            if (bootstrapCollapse) {
+                bootstrapCollapse.hide();
+            }
 
         }
 
@@ -449,42 +385,25 @@ navLinksMobile.forEach(link => {
 });
 
 
-/* =====================================================
-   INPUT INTERACTION
-===================================================== */
+/* ================= INPUT EFFECT ================= */
 
-const inputs =
+const formInputs =
     document.querySelectorAll(
-        ".input-wrapper input, .input-wrapper select"
+        ".registration-card input, .registration-card select"
     );
 
+formInputs.forEach(function(input) {
 
-inputs.forEach(input => {
+    input.addEventListener("focus", function() {
 
-    input.addEventListener("focus", () => {
-
-        input.parentElement.style.transform =
-            "translateY(-1px)";
+        this.style.borderColor = "#a855f7";
 
     });
 
+    input.addEventListener("blur", function() {
 
-    input.addEventListener("blur", () => {
-
-        input.parentElement.style.transform =
-            "translateY(0)";
+        this.style.borderColor = "#292b4a";
 
     });
-
-});
-
-
-/* =====================================================
-   PAGE LOAD
-===================================================== */
-
-window.addEventListener("load", () => {
-
-    document.body.classList.add("loaded");
 
 });
