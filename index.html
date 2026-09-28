@@ -1,113 +1,1564 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>College Festival Portal</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>College Fest 2026 | Event Portal</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
-  <!-- Header & Navigation -->
-  <header>
-    <h1>College Fest 2026</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#registration">Registration</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Homepage -->
-  <section id="home" class="banner">
-    <h2>Welcome to College Fest!</h2>
-    <p>✨ Join us for exciting events, competitions, and celebrations ✨</p>
-    <div id="announcements"></div>
-  </section>
 
-  <!-- Event Listings -->
-  <section id="events">
-    <h2>Events</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>Dance Competition</h3>
-        <p>Date: Oct 10 | Venue: Auditorium</p>
-        <p>Showcase your talent in an electrifying dance battle.</p>
-        <button onclick="registerEvent('Dance Competition')">Register</button>
-      </div>
-      <div class="card">
-        <h3>Hackathon</h3>
-        <p>Date: Oct 11 | Venue: Lab Block</p>
-        <p>24‑hour coding challenge to solve real‑world problems.</p>
-        <button onclick="registerEvent('Hackathon')">Register</button>
-      </div>
+<!-- =====================================================
+     NAVIGATION BAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#home">
+
+            <i class="bi bi-calendar-event-fill"></i>
+
+            College Fest 2026
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse"
+             id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#events">
+                        Events
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#schedule">
+                        Schedule
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#registration">
+                        Registration
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
     </div>
-  </section>
 
-  <!-- Schedule -->
-  <section id="schedule">
-    <h2>Schedule</h2>
-    <table>
-      <tr><th>Date</th><th>Event</th><th>Venue</th></tr>
-      <tr><td>Oct 10</td><td>Dance Competition</td><td>Auditorium</td></tr>
-      <tr><td>Oct 11</td><td>Hackathon</td><td>Lab Block</td></tr>
-    </table>
-  </section>
+</nav>
 
-  <!-- Gallery -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="images/eventimage1.jpeg" alt="Festival Event 1">
-        <div class="caption">Dance Competition – Auditorium</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/eventimage2.jpeg" alt="Festival Event 2">
-        <div class="caption">Hackathon – Lab Block</div>
-      </div>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<header id="home" class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <span class="badge bg-warning text-dark mb-3">
+                    COLLEGE FESTIVAL 2026
+                </span>
+
+                <h1 class="display-3 fw-bold">
+                    Tech & Cultural Fest
+                </h1>
+
+                <p class="lead">
+                    Experience technology, creativity, culture,
+                    innovation and entertainment all in one place.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#events"
+                       class="btn btn-light btn-lg me-2">
+
+                        <i class="bi bi-calendar2-event"></i>
+                        Explore Events
+
+                    </a>
+
+                    <a href="#registration"
+                       class="btn btn-outline-light btn-lg">
+
+                        Register Now
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-5 mt-5 mt-lg-0">
+
+                <div class="hero-info-card">
+
+                    <i class="bi bi-stars"></i>
+
+                    <h3>
+                        Celebrate. Compete. Create.
+                    </h3>
+
+                    <p>
+                        Join students from different departments
+                        and participate in exciting events.
+                    </p>
+
+                    <div class="hero-details">
+
+                        <div>
+                            <i class="bi bi-calendar3"></i>
+                            <span>October 15–17, 2026</span>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-geo-alt"></i>
+                            <span>College Campus</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </section>
 
-  <!-- Registration Form -->
-  <section id="registration">
-    <h2>Register Now</h2>
-    <form id="regForm" class="form-card">
-      <input type="text" id="name" placeholder="Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="tel" id="mobile" placeholder="Mobile" required>
-      <input type="text" id="dept" placeholder="Department/Year" required>
-      <select id="eventSelect" required>
-        <option value="">Select Event</option>
-        <option>Dance Competition</option>
-        <option>Hackathon</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-    <p id="successMsg"></p>
-  </section>
+</header>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: fest@college.edu | Phone: 9876543210</p>
-    <form id="contactForm" class="form-card">
-      <input type="text" id="cname" placeholder="Your Name" required>
-      <input type="email" id="cemail" placeholder="Your Email" required>
-      <textarea id="cmsg" placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <p id="contactMsg"></p>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 College Fest. All rights reserved.</p>
-  </footer>
 
-  <script src="script.js"></script>
+<!-- =====================================================
+     ANNOUNCEMENTS
+===================================================== -->
+
+<section class="announcement-section">
+
+    <div class="container">
+
+        <div class="announcement-box">
+
+            <div class="announcement-title">
+
+                <i class="bi bi-megaphone-fill"></i>
+
+                <strong>Latest Announcement</strong>
+
+            </div>
+
+
+            <p id="announcementText">
+                Registration is now open for all festival events!
+            </p>
+
+
+            <button
+                id="announcementBtn"
+                class="btn btn-sm btn-primary">
+
+                View Latest Update
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURED EVENTS
+===================================================== -->
+
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                FESTIVAL HIGHLIGHTS
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Featured Events
+            </h2>
+
+            <p class="text-muted">
+                Explore technical, cultural and sports activities.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="highlight-card">
+
+                    <i class="bi bi-code-slash"></i>
+
+                    <h4>
+                        Technical Events
+                    </h4>
+
+                    <p>
+                        Coding contests, hackathons, quizzes
+                        and innovative technical challenges.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="highlight-card">
+
+                    <i class="bi bi-music-note-beamed"></i>
+
+                    <h4>
+                        Cultural Events
+                    </h4>
+
+                    <p>
+                        Music, dance, arts and cultural
+                        performances.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="highlight-card">
+
+                    <i class="bi bi-trophy"></i>
+
+                    <h4>
+                        Sports Events
+                    </h4>
+
+                    <p>
+                        Exciting indoor and outdoor
+                        competitions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section id="events"
+         class="section-padding bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                EVENTS
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Event Listings
+            </h2>
+
+            <p class="text-muted">
+                Select a category to explore events.
+            </p>
+
+        </div>
+
+
+        <!-- Event Filters -->
+
+        <div class="text-center mb-4">
+
+            <button
+                class="btn btn-primary filter-btn active"
+                data-category="all">
+
+                All
+
+            </button>
+
+            <button
+                class="btn btn-outline-primary filter-btn"
+                data-category="technical">
+
+                Technical
+
+            </button>
+
+            <button
+                class="btn btn-outline-primary filter-btn"
+                data-category="cultural">
+
+                Cultural
+
+            </button>
+
+            <button
+                class="btn btn-outline-primary filter-btn"
+                data-category="sports">
+
+                Sports
+
+            </button>
+
+        </div>
+
+
+        <div class="row g-4"
+             id="eventContainer">
+
+
+            <!-- Event 1 -->
+
+            <div class="col-md-6 col-lg-4 event-item"
+                 data-category="technical">
+
+                <div class="event-card">
+
+                    <div class="event-icon technical-icon">
+
+                        <i class="bi bi-code-slash"></i>
+
+                    </div>
+
+                    <span class="event-category">
+                        Technical
+                    </span>
+
+                    <h4>
+                        Code Clash
+                    </h4>
+
+                    <p>
+                        Competitive programming challenge
+                        for students.
+                    </p>
+
+                    <div class="event-details">
+
+                        <p>
+                            <i class="bi bi-calendar3"></i>
+                            October 15, 2026
+                        </p>
+
+                        <p>
+                            <i class="bi bi-clock"></i>
+                            10:00 AM – 12:00 PM
+                        </p>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            Computer Lab
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-primary w-100 register-event"
+                        data-event="Code Clash">
+
+                        Register for Event
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 2 -->
+
+            <div class="col-md-6 col-lg-4 event-item"
+                 data-category="technical">
+
+                <div class="event-card">
+
+                    <div class="event-icon technical-icon">
+
+                        <i class="bi bi-lightbulb"></i>
+
+                    </div>
+
+                    <span class="event-category">
+                        Technical
+                    </span>
+
+                    <h4>
+                        Project Expo
+                    </h4>
+
+                    <p>
+                        Showcase innovative student
+                        projects and ideas.
+                    </p>
+
+                    <div class="event-details">
+
+                        <p>
+                            <i class="bi bi-calendar3"></i>
+                            October 15, 2026
+                        </p>
+
+                        <p>
+                            <i class="bi bi-clock"></i>
+                            1:00 PM – 3:00 PM
+                        </p>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            Main Auditorium
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-primary w-100 register-event"
+                        data-event="Project Expo">
+
+                        Register for Event
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 3 -->
+
+            <div class="col-md-6 col-lg-4 event-item"
+                 data-category="cultural">
+
+                <div class="event-card">
+
+                    <div class="event-icon cultural-icon">
+
+                        <i class="bi bi-music-note-beamed"></i>
+
+                    </div>
+
+                    <span class="event-category">
+                        Cultural
+                    </span>
+
+                    <h4>
+                        Battle of Bands
+                    </h4>
+
+                    <p>
+                        A musical competition featuring
+                        talented student bands.
+                    </p>
+
+                    <div class="event-details">
+
+                        <p>
+                            <i class="bi bi-calendar3"></i>
+                            October 16, 2026
+                        </p>
+
+                        <p>
+                            <i class="bi bi-clock"></i>
+                            4:00 PM – 6:00 PM
+                        </p>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            Open Air Stage
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-primary w-100 register-event"
+                        data-event="Battle of Bands">
+
+                        Register for Event
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 4 -->
+
+            <div class="col-md-6 col-lg-4 event-item"
+                 data-category="cultural">
+
+                <div class="event-card">
+
+                    <div class="event-icon cultural-icon">
+
+                        <i class="bi bi-person-arms-up"></i>
+
+                    </div>
+
+                    <span class="event-category">
+                        Cultural
+                    </span>
+
+                    <h4>
+                        Dance Fiesta
+                    </h4>
+
+                    <p>
+                        Celebrate creativity through
+                        individual and group performances.
+                    </p>
+
+                    <div class="event-details">
+
+                        <p>
+                            <i class="bi bi-calendar3"></i>
+                            October 17, 2026
+                        </p>
+
+                        <p>
+                            <i class="bi bi-clock"></i>
+                            10:00 AM – 1:00 PM
+                        </p>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            Cultural Hall
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-primary w-100 register-event"
+                        data-event="Dance Fiesta">
+
+                        Register for Event
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 5 -->
+
+            <div class="col-md-6 col-lg-4 event-item"
+                 data-category="sports">
+
+                <div class="event-card">
+
+                    <div class="event-icon sports-icon">
+
+                        <i class="bi bi-dribbble"></i>
+
+                    </div>
+
+                    <span class="event-category">
+                        Sports
+                    </span>
+
+                    <h4>
+                        Basketball
+                    </h4>
+
+                    <p>
+                        Inter-department basketball
+                        tournament.
+                    </p>
+
+                    <div class="event-details">
+
+                        <p>
+                            <i class="bi bi-calendar3"></i>
+                            October 16, 2026
+                        </p>
+
+                        <p>
+                            <i class="bi bi-clock"></i>
+                            9:00 AM – 12:00 PM
+                        </p>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            College Ground
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-primary w-100 register-event"
+                        data-event="Basketball">
+
+                        Register for Event
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 6 -->
+
+            <div class="col-md-6 col-lg-4 event-item"
+                 data-category="sports">
+
+                <div class="event-card">
+
+                    <div class="event-icon sports-icon">
+
+                        <i class="bi bi-controller"></i>
+
+                    </div>
+
+                    <span class="event-category">
+                        Sports
+                    </span>
+
+                    <h4>
+                        E-Sports Arena
+                    </h4>
+
+                    <p>
+                        Competitive gaming event
+                        for college students.
+                    </p>
+
+                    <div class="event-details">
+
+                        <p>
+                            <i class="bi bi-calendar3"></i>
+                            October 17, 2026
+                        </p>
+
+                        <p>
+                            <i class="bi bi-clock"></i>
+                            2:00 PM – 5:00 PM
+                        </p>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            Seminar Hall
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-primary w-100 register-event"
+                        data-event="E-Sports Arena">
+
+                        Register for Event
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCHEDULE
+===================================================== -->
+
+<section id="schedule"
+         class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                SCHEDULE
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Event Schedule
+            </h2>
+
+            <p class="text-muted">
+                Check event dates, timings and venues.
+            </p>
+
+        </div>
+
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered schedule-table">
+
+                <thead class="table-primary">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Event</th>
+
+                        <th>Time</th>
+
+                        <th>Venue</th>
+
+                        <th>Category</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>15 Oct 2026</td>
+
+                        <td>Code Clash</td>
+
+                        <td>10:00 AM</td>
+
+                        <td>Computer Lab</td>
+
+                        <td>
+                            <span class="badge bg-primary">
+                                Technical
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>15 Oct 2026</td>
+
+                        <td>Project Expo</td>
+
+                        <td>1:00 PM</td>
+
+                        <td>Main Auditorium</td>
+
+                        <td>
+                            <span class="badge bg-primary">
+                                Technical
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>16 Oct 2026</td>
+
+                        <td>Basketball</td>
+
+                        <td>9:00 AM</td>
+
+                        <td>College Ground</td>
+
+                        <td>
+                            <span class="badge bg-success">
+                                Sports
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>16 Oct 2026</td>
+
+                        <td>Battle of Bands</td>
+
+                        <td>4:00 PM</td>
+
+                        <td>Open Air Stage</td>
+
+                        <td>
+                            <span class="badge bg-danger">
+                                Cultural
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>17 Oct 2026</td>
+
+                        <td>Dance Fiesta</td>
+
+                        <td>10:00 AM</td>
+
+                        <td>Cultural Hall</td>
+
+                        <td>
+                            <span class="badge bg-danger">
+                                Cultural
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>17 Oct 2026</td>
+
+                        <td>E-Sports Arena</td>
+
+                        <td>2:00 PM</td>
+
+                        <td>Seminar Hall</td>
+
+                        <td>
+                            <span class="badge bg-success">
+                                Sports
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section id="gallery"
+         class="section-padding bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                GALLERY
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Festival Gallery
+            </h2>
+
+            <p class="text-muted">
+                Moments from our college events.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-6 col-md-4">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://placehold.co/600x400?text=Technical+Event"
+                        alt="Technical Event">
+
+                    <div class="gallery-caption">
+                        Technical Events
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://placehold.co/600x400?text=Cultural+Event"
+                        alt="Cultural Event">
+
+                    <div class="gallery-caption">
+                        Cultural Events
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://placehold.co/600x400?text=Sports"
+                        alt="Sports Event">
+
+                    <div class="gallery-caption">
+                        Sports Events
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://placehold.co/600x400?text=College+Fest"
+                        alt="College Festival">
+
+                    <div class="gallery-caption">
+                        College Festival
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://placehold.co/600x400?text=Students"
+                        alt="Students">
+
+                    <div class="gallery-caption">
+                        Student Participation
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://placehold.co/600x400?text=Celebration"
+                        alt="Festival Celebration">
+
+                    <div class="gallery-caption">
+                        Festival Celebration
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REGISTRATION
+===================================================== -->
+
+<section id="registration"
+         class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                REGISTRATION
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Event Registration
+            </h2>
+
+            <p class="text-muted">
+                Register for your favourite college event.
+            </p>
+
+        </div>
+
+
+        <div class="registration-card">
+
+            <!-- Success Message -->
+
+            <div id="registrationSuccess"
+                 class="alert alert-success d-none">
+
+            </div>
+
+
+            <!-- Error Message -->
+
+            <div id="registrationError"
+                 class="alert alert-danger d-none">
+
+            </div>
+
+
+            <form id="registrationForm">
+
+                <div class="row g-4">
+
+
+                    <!-- Name -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="participantName"
+                            class="form-control"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="participantEmail"
+                            class="form-control"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <!-- Mobile -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="participantMobile"
+                            class="form-control"
+                            placeholder="10-digit mobile number"
+                            pattern="[0-9]{10}"
+                            required>
+
+                    </div>
+
+
+                    <!-- Department -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Department
+                        </label>
+
+                        <select
+                            id="department"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Select Department
+                            </option>
+
+                            <option>
+                                Artificial Intelligence & Data Science
+                            </option>
+
+                            <option>
+                                Computer Science Engineering
+                            </option>
+
+                            <option>
+                                Information Technology
+                            </option>
+
+                            <option>
+                                Electronics & Communication
+                            </option>
+
+                            <option>
+                                Mechanical Engineering
+                            </option>
+
+                            <option>
+                                Civil Engineering
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Year -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Year
+                        </label>
+
+                        <select
+                            id="studentYear"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Select Year
+                            </option>
+
+                            <option>1st Year</option>
+                            <option>2nd Year</option>
+                            <option>3rd Year</option>
+                            <option>4th Year</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Event -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Select Event
+                        </label>
+
+                        <select
+                            id="selectedEvent"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Select Event
+                            </option>
+
+                            <option>Code Clash</option>
+                            <option>Project Expo</option>
+                            <option>Battle of Bands</option>
+                            <option>Dance Fiesta</option>
+                            <option>Basketball</option>
+                            <option>E-Sports Arena</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Buttons -->
+
+                    <div class="col-12 text-center">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary px-5 me-2">
+
+                            <i class="bi bi-check-circle"></i>
+
+                            Register
+
+                        </button>
+
+
+                        <button
+                            type="reset"
+                            class="btn btn-outline-secondary px-5">
+
+                            <i class="bi bi-arrow-counterclockwise"></i>
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact"
+         class="section-padding bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                CONTACT
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Contact Us
+            </h2>
+
+            <p class="text-muted">
+                Have questions? Contact the college festival team.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- Contact Information -->
+
+            <div class="col-lg-5">
+
+                <div class="contact-info">
+
+                    <h3>
+                        Festival Contact
+                    </h3>
+
+                    <p>
+                        Reach out to us for event registration,
+                        schedule and festival-related queries.
+                    </p>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <div>
+
+                            <strong>Address</strong>
+
+                            <p>
+                                College Campus,
+                                Chennai, Tamil Nadu
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        <div>
+
+                            <strong>Email</strong>
+
+                            <p>
+                                fest@example.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        <div>
+
+                            <strong>Phone</strong>
+
+                            <p>
+                                +91 98765 43210
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+
+            <div class="col-lg-7">
+
+                <div class="contact-form-card">
+
+                    <div id="contactSuccess"
+                         class="alert alert-success d-none">
+
+                    </div>
+
+
+                    <form id="contactForm">
+
+                        <div class="row g-3">
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    class="form-control"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    class="form-control"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+                                    Subject
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactSubject"
+                                    class="form-control"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+                                    Message
+                                </label>
+
+                                <textarea
+                                    id="contactMessage"
+                                    class="form-control"
+                                    rows="5"
+                                    required></textarea>
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary">
+
+                                    <i class="bi bi-send"></i>
+
+                                    Send Enquiry
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container text-center">
+
+        <h5>
+            <i class="bi bi-calendar-event-fill"></i>
+            College Fest 2026
+        </h5>
+
+        <p>
+            Celebrating Technology, Culture and Creativity
+        </p>
+
+        <p class="mb-0">
+            © 2026 College Event Portal. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Custom JavaScript -->
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
