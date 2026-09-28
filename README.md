@@ -1,106 +1,97 @@
-# ⚡ HackSphere 2026 – College Event Portal
+# 🎓 HackSphere 2026 – Responsive College Event Portal
 
-A modern and responsive **College Event Portal** developed for **HackSphere 2026 at Prathyusha Engineering College**.
+## 🌐 Live Demo
 
-The website provides students with event information, schedules, announcements, event registration, gallery highlights, and contact details through a responsive and interactive interface.
-
----
-
-## 🌟 Live Demo
-
-🔗 **Live Website:**  
+🚀 **Live Website:**  
 https://abhinayakuchi-source.github.io/college-event-portal/
 
 ---
 
 ## 📌 Project Overview
 
-HackSphere 2026 is designed as a digital event portal for a college festival.
+**HackSphere 2026 – College Event Portal** is a modern and responsive front-end web project developed for **Prathyusha Engineering College**.
 
-The portal brings technical, cultural, and sports activities together in one place and allows students to explore events and register through an interactive registration form.
+The portal provides students with a single platform to explore college festival events, view schedules, browse festival images, register for events, and access contact information.
 
-The website is designed to work smoothly across:
-
-- 💻 Desktop
-- 💻 Laptop
-- 📱 Mobile
-- 📟 Tablet
+The project focuses on responsive web design, modern user interface development, JavaScript DOM manipulation, event filtering, dynamic announcements, and client-side form validation.
 
 ---
 
-## ✨ Features
+## 🎯 Project Objective
 
-### 🏠 Home Section
+The main objective of this project is to develop a responsive college event portal that allows students to:
 
-- HackSphere 2026 festival introduction
-- College name and festival details
-- Event date, time, and venue
-- Attractive hero section
+- Explore college events
+- View event details
+- Check the event schedule
+- Filter events by category
+- View festival images
+- Register for events
+- Access contact information
+
+The project also demonstrates practical usage of **HTML5, CSS3, Bootstrap, JavaScript DOM manipulation, form validation, and responsive web design**.
+
+---
+
+## 🛠️ Technologies Used
+
+- **HTML5** – Website structure and semantic elements
+- **CSS3** – Custom styling, animations, gradients, and responsive design
+- **Bootstrap 5** – Responsive layouts and UI components
+- **JavaScript** – DOM manipulation and interactive functionality
+- **Bootstrap Icons** – Icons and visual elements
+- **Git** – Version control
+- **GitHub** – Source code hosting
+- **GitHub Pages** – Website deployment
+
+---
+
+## ✨ Main Features
+
+### 🏠 Homepage
+
+The homepage includes:
+
+- College name
+- HackSphere 2026 festival branding
+- Festival highlights
+- Date and time
+- Venue information
+- Navigation menu
+- Hero section
 - Festival image
-- Quick registration button
-- Explore events button
-- Participant and event statistics
+- Register button
+- Explore Events button
+- Dynamic announcements
 
-### 📢 Announcements
+### 🎪 Event Listings
 
-- Dynamic announcement section
-- Multiple announcements
-- Automatic announcement rotation
-- Manual announcement refresh button
-- JavaScript DOM manipulation
-
-### 🎯 Event Categories
-
-Events are organized into:
-
-- 💻 Technical
-- 🎭 Cultural
-- 🏀 Sports
-
-Users can filter events using category buttons.
-
-### 🏆 Events
-
-The portal includes:
-
-- HackSphere Hackathon
-- Project Expo
-- Code Quest
-- Dance Fiesta
-- Battle of Bands
-- Basketball Challenge
-
-Each event contains:
+The Events section displays:
 
 - Event name
-- Category
-- Description
+- Event category
 - Date
 - Time
 - Venue
-- Registration button
+- Description
+- Register button
 
-### 📅 Schedule
+Users can filter events according to their category.
 
-A dedicated schedule section displays:
+### 📅 Event Schedule
 
-- Event timing
-- Event name
-- Venue
-- Event category
+A dedicated schedule section provides information about:
 
-### 🖼️ Gallery
+- Event timings
+- Event names
+- Venues
+- Festival activities
 
-The gallery showcases festival images using:
-
-- `eventimage1.jpg`
-- `eventimage2.jpg`
-
-The gallery also includes a placeholder for future event memories.
+The schedule is displayed using a responsive Bootstrap table.
 
 ### 📝 Event Registration
 
-The registration form collects:
+Students can register for events by providing:
 
 - Full Name
 - Email Address
@@ -109,69 +100,37 @@ The registration form collects:
 - Year
 - Selected Event
 
-JavaScript validation is implemented for the form.
+JavaScript validates the form before displaying the registration confirmation.
 
-### ✅ Form Validation
+### 🖼️ Festival Gallery
 
-The registration form checks:
+The gallery showcases festival-related images used in the project.
 
-- Empty fields
-- Valid email format
-- 10-digit mobile number
-- Department selection
-- Year selection
-- Event selection
+### 📢 Announcements
 
-After successful validation, a dynamic registration-success message is displayed.
+The portal includes a dynamic announcement section.
+
+Announcements automatically rotate at regular intervals using JavaScript.
 
 ### 📞 Contact Section
 
-The portal provides:
+The contact section provides festival contact information including:
 
-- Venue information
-- Email information
-- Contact number
+- Venue
+- Email address
+- Phone number
 
 ### 📱 Responsive Design
 
-The website is optimized for:
+The website is designed to work across:
 
 - Desktop
 - Laptop
 - Tablet
 - Mobile devices
 
-Bootstrap responsive utilities and custom CSS media queries are used to achieve responsiveness.
-
 ---
 
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| HTML5 | Website structure |
-| CSS3 | Styling and animations |
-| Bootstrap 5 | Responsive layout and components |
-| JavaScript | DOM manipulation and validation |
-| Bootstrap Icons | Icons |
-| Google Fonts | Typography |
-| GitHub Pages | Website hosting |
-
----
-
-## 📂 Project Structure
-
-```text
-college-event-portal/
-│
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-│
-└── images/
-    ├── eventimage1.jpg
-    └── eventimage2.jpg
 ## 🖼️ Project Images
 
 ### Event Image 1
@@ -264,187 +223,22 @@ The Bootstrap navigation menu adapts to smaller screen sizes.
 
 ---
 
-## ▶️ How to Run the Project
+## 📁 Project Structure
 
-### Method 1 – Open Locally
-
-1. Download or clone the repository.
-2. Open the project folder.
-3. Make sure the images are inside the `images` folder.
-4. Double-click:
-
-`index.html`
-
-5. The website will open in your browser.
-
----
-
-### Method 2 – Using Git
-
-Clone the repository using:
-
-`git clone https://github.com/abhinayakuchi-source/college-event-portal.git`
-
-Then open the project folder:
-
-`cd college-event-portal`
-
-Open `index.html` in a browser.
+college-event-portal/
+│
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+│
+└── images/
+    ├── eventimage1.jpg
+    └── eventimage2.jpg
 
 ---
 
-## 🌐 GitHub Pages Deployment
-
-This project can be hosted using GitHub Pages.
-
-### Steps
-
-1. Create a GitHub repository.
-2. Upload the following files:
-
-`index.html`  
-`style.css`  
-`script.js`  
-`README.md`  
-`images/`
-
-3. Open the repository on GitHub.
-4. Go to:
-
-`Settings → Pages`
-
-5. Select the deployment branch.
-6. Select the appropriate folder, usually:
-
-`/root`
-
-7. Save the settings.
-8. GitHub Pages will generate the website URL.
-
-### Live Website
-
-`https://abhinayakuchi-source.github.io/college-event-portal/`
-
----
-
-## 🎨 Design Highlights
-
-The website uses a modern festival-inspired interface featuring:
-
-- Dark theme
-- Purple and pink gradients
-- Glassmorphism
-- Rounded cards
-- Hover animations
-- Responsive layouts
-- Modern typography
-- Interactive buttons
-- Image-based event presentation
-- Bootstrap components
-- Mobile-friendly navigation
-- Responsive event cards
-- Modern registration form
-- Responsive schedule table
-
----
-
-## 🎯 User Experience
-
-The portal is designed to provide a simple and engaging experience for students.
-
-Users can:
-
-1. Open the homepage.
-2. View festival information.
-3. Explore available events.
-4. Filter events by category.
-5. View the event schedule.
-6. Select an event for registration.
-7. Fill in their details.
-8. Submit the registration form.
-9. Receive a dynamic confirmation message.
-10. View festival images and contact information.
-
----
-
-## 📚 Learning Outcomes
-
-Through this project, the following concepts were practiced:
-
-- Semantic HTML structure
-- HTML5 forms
-- CSS styling
-- CSS gradients
-- CSS hover effects
-- Responsive web design
-- Bootstrap grid system
-- Bootstrap components
-- Bootstrap navigation
-- Bootstrap tables
-- Bootstrap forms
-- JavaScript DOM manipulation
-- JavaScript event listeners
-- JavaScript form validation
-- Dynamic content updates
-- Event filtering
-- Git and GitHub
-- GitHub Pages deployment
-
----
-
-## 💡 Key Concepts Demonstrated
-
-### HTML5
-
-Used to create the structure of the website, including:
-
-- Navigation
-- Sections
-- Cards
-- Forms
-- Tables
-- Images
-- Footer
-
-### CSS3
-
-Used for:
-
-- Custom styling
-- Gradients
-- Animations
-- Hover effects
-- Responsive layouts
-- Glassmorphism
-- Typography
-
-### Bootstrap
-
-Used for:
-
-- Responsive grid system
-- Navbar
-- Cards
-- Buttons
-- Forms
-- Tables
-- Responsive utilities
-
-### JavaScript
-
-Used for:
-
-- DOM manipulation
-- Event listeners
-- Form validation
-- Event filtering
-- Dynamic announcements
-- Dynamic registration messages
-- Navigation interaction
-
----
-
-## 📁 File Description
+## 📄 File Description
 
 ### `index.html`
 
@@ -507,6 +301,181 @@ The navigation changes to a mobile-friendly Bootstrap menu and the content secti
 
 ---
 
+## 🎨 Design Highlights
+
+The website uses a modern festival-inspired interface featuring:
+
+- Dark theme
+- Purple and pink gradients
+- Glassmorphism
+- Rounded cards
+- Hover animations
+- Responsive layouts
+- Modern typography
+- Interactive buttons
+- Image-based event presentation
+- Bootstrap components
+- Mobile-friendly navigation
+- Responsive event cards
+- Modern registration form
+- Responsive schedule table
+
+---
+
+## 🎯 User Experience
+
+The portal is designed to provide a simple and engaging experience for students.
+
+Users can:
+
+1. Open the homepage.
+2. View festival information.
+3. Explore available events.
+4. Filter events by category.
+5. View the event schedule.
+6. Select an event for registration.
+7. Fill in their details.
+8. Submit the registration form.
+9. Receive a dynamic confirmation message.
+10. View festival images and contact information.
+
+---
+
+## 💡 Key Concepts Demonstrated
+
+### HTML5
+
+Used to create the structure of the website, including:
+
+- Navigation
+- Sections
+- Cards
+- Forms
+- Tables
+- Images
+- Footer
+
+### CSS3
+
+Used for:
+
+- Custom styling
+- Gradients
+- Animations
+- Hover effects
+- Responsive layouts
+- Glassmorphism
+- Typography
+
+### Bootstrap
+
+Used for:
+
+- Responsive grid system
+- Navbar
+- Cards
+- Buttons
+- Forms
+- Tables
+- Responsive utilities
+
+### JavaScript
+
+Used for:
+
+- DOM manipulation
+- Event listeners
+- Form validation
+- Event filtering
+- Dynamic announcements
+- Dynamic registration messages
+- Navigation interaction
+
+---
+
+## 📚 Learning Outcomes
+
+Through this project, the following concepts were practiced:
+
+- Semantic HTML structure
+- HTML5 forms
+- CSS styling
+- CSS gradients
+- CSS hover effects
+- Responsive web design
+- Bootstrap grid system
+- Bootstrap components
+- Bootstrap navigation
+- Bootstrap tables
+- Bootstrap forms
+- JavaScript DOM manipulation
+- JavaScript event listeners
+- JavaScript form validation
+- Dynamic content updates
+- Event filtering
+- Git and GitHub
+- GitHub Pages deployment
+
+---
+
+## ▶️ How to Run the Project
+
+### Method 1 – Open Locally
+
+1. Download or clone the repository.
+2. Open the project folder.
+3. Make sure the images are inside the `images` folder.
+4. Double-click `index.html`.
+5. The website will open in your browser.
+
+### Method 2 – Using Git
+
+Clone the repository using:
+
+git clone https://github.com/abhinayakuchi-source/college-event-portal.git
+
+Then open the project folder:
+
+cd college-event-portal
+
+Open `index.html` in a browser.
+
+---
+
+## 🌐 GitHub Pages Deployment
+
+This project can be hosted using GitHub Pages.
+
+### Steps
+
+1. Create a GitHub repository.
+2. Upload the following files:
+
+index.html
+style.css
+script.js
+README.md
+images/
+
+3. Open the repository on GitHub.
+4. Go to:
+
+Settings → Pages
+
+5. Select the deployment branch.
+6. Select the appropriate folder, usually:
+
+/root
+
+7. Save the settings.
+8. GitHub Pages will generate the website URL.
+
+### 🚀 Live Website
+
+https://abhinayakuchi-source.github.io/college-event-portal/
+
+---
+
 ## 🚀 Future Enhancements
 
 The project can be further enhanced by adding:
@@ -546,6 +515,25 @@ B.Tech – Artificial Intelligence & Data Science
 
 ## ⭐ Acknowledgement
 
-This project was developed as a front-end mini project to demonstrate responsive web development, JavaScript DOM manipulation, form validation, Bootstrap components, and modern UI design.
+This project was developed as a front-end mini project to demonstrate:
+
+- Responsive web development
+- JavaScript DOM manipulation
+- Form validation
+- Bootstrap components
+- Modern UI design
+- GitHub Pages deployment
 
 The project was created for educational and academic purposes.
+
+---
+
+## 📌 Note
+
+The festival name, event details, dates, venue, and contact information used in this project are **demo/project content** created for the front-end implementation and are not verified official college event information.
+
+---
+
+## 📜 License
+
+This project is created for educational and academic purposes.
