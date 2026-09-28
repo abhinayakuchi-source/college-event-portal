@@ -1,401 +1,162 @@
-/* =====================================================
-   COLLEGE EVENT PORTAL - JAVASCRIPT
-===================================================== */
-
-
-/* =====================================================
-   ANNOUNCEMENTS
-===================================================== */
+/* ================= ANNOUNCEMENTS ================= */
 
 const announcements = [
-
-    "Registration is now open for all festival events!",
-
-    "Participants must carry their valid college ID card.",
-
-    "Event schedules may be updated by the festival committee.",
-
-    "Last date for event registration will be announced soon.",
-
-    "Participants are requested to report to the venue before the event."
+    "Registrations are now open for HackSphere 2026!",
+    "HackSphere Hackathon will be conducted on 15 October 2026.",
+    "Project Expo registrations are open for all departments.",
+    "Get ready for technology, culture and sports!",
+    "Students can register for their favourite events."
 ];
-
 
 let announcementIndex = 0;
 
-
-const announcementText =
-    document.getElementById("announcementText");
-
-
-const announcementBtn =
-    document.getElementById("announcementBtn");
-
-
-announcementBtn.addEventListener("click", function () {
+function nextAnnouncement() {
 
     announcementIndex++;
 
     if (announcementIndex >= announcements.length) {
-
         announcementIndex = 0;
-
     }
 
-    announcementText.textContent =
+    document.getElementById("announcementText").textContent =
         announcements[announcementIndex];
-
-});
-
+}
 
 
-/* =====================================================
-   EVENT CATEGORY FILTER
-===================================================== */
+/* ================= EVENT FILTER ================= */
 
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
+function filterEvents(category, button) {
 
+    const events = document.querySelectorAll(".event-item");
 
-const eventItems =
-    document.querySelectorAll(".event-item");
+    const buttons = document.querySelectorAll(".filter-btn");
 
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+    });
 
-filterButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        const selectedCategory =
-            button.getAttribute("data-category");
+    button.classList.add("active");
 
 
-        /* Change active button */
+    events.forEach(eventItem => {
 
-        filterButtons.forEach(function (btn) {
+        if (category === "all") {
 
-            btn.classList.remove("active");
+            eventItem.style.display = "block";
 
-            btn.classList.remove("btn-primary");
+        } else if (eventItem.classList.contains(category)) {
 
-            btn.classList.add("btn-outline-primary");
+            eventItem.style.display = "block";
 
+        } else {
+
+            eventItem.style.display = "none";
+
+        }
+
+    });
+}
+
+
+/* ================= EVENT REGISTRATION BUTTON ================= */
+
+function selectEvent(eventName) {
+
+    const eventSelect =
+        document.getElementById("selectedEvent");
+
+    eventSelect.value = eventName;
+
+    document.getElementById("registration")
+        .scrollIntoView({
+            behavior: "smooth"
         });
+}
 
 
-        button.classList.add("active");
+/* ================= REGISTRATION FORM ================= */
 
-        button.classList.remove("btn-outline-primary");
+document.getElementById("registrationForm")
+    .addEventListener("submit", function (e) {
 
-        button.classList.add("btn-primary");
+        e.preventDefault();
+
+        const name =
+            document.getElementById("fullName")
+                .value.trim();
+
+        const email =
+            document.getElementById("email")
+                .value.trim();
+
+        const mobile =
+            document.getElementById("mobile")
+                .value.trim();
+
+        const department =
+            document.getElementById("department")
+                .value;
+
+        const year =
+            document.getElementById("year")
+                .value;
+
+        const selectedEvent =
+            document.getElementById("selectedEvent")
+                .value;
+
+        const message =
+            document.getElementById("registrationMessage");
 
 
-        /* Filter events */
+        /* CHECK EMPTY FIELDS */
 
-        eventItems.forEach(function (event) {
+        if (
+            name === "" ||
+            email === "" ||
+            mobile === "" ||
+            department === "" ||
+            year === "" ||
+            selectedEvent === ""
+        ) {
 
-            const eventCategory =
-                event.getAttribute("data-category");
+            message.innerHTML = `
+                <div class="alert alert-danger mt-4">
+                    <i class="bi bi-exclamation-circle"></i>
+                    Please fill in all the required fields.
+                </div>
+            `;
+
+            return;
+        }
 
 
-            if (
-                selectedCategory === "all" ||
-                selectedCategory === eventCategory
-            ) {
+        /* CHECK MOBILE */
 
-                event.style.display = "";
+        if (!/^[0-9]{10}$/.test(mobile)) {
 
-            } else {
+            message.innerHTML = `
+                <div class="alert alert-danger mt-4">
+                    Please enter a valid 10-digit mobile number.
+                </div>
+            `;
 
-                event.style.display = "none";
+            return;
+        }
 
-            }
 
-        });
+        /* SUCCESS */
+
+        message.innerHTML = `
+            <div class="alert alert-success mt-4">
+                <i class="bi bi-check-circle-fill"></i>
+
+                Registration successful for
+                <strong>${selectedEvent}</strong>!
+
+            </div>
+        `;
+
+        this.reset();
 
     });
-
-});
-
-
-
-/* =====================================================
-   REGISTER BUTTONS FROM EVENT CARDS
-===================================================== */
-
-const registerButtons =
-    document.querySelectorAll(".register-event");
-
-
-const selectedEvent =
-    document.getElementById("selectedEvent");
-
-
-registerButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        const eventName =
-            button.getAttribute("data-event");
-
-
-        /* Select event automatically */
-
-        selectedEvent.value = eventName;
-
-
-        /* Scroll to registration */
-
-        document
-            .getElementById("registration")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-
-    });
-
-});
-
-
-
-/* =====================================================
-   REGISTRATION FORM
-===================================================== */
-
-const registrationForm =
-    document.getElementById("registrationForm");
-
-
-const registrationSuccess =
-    document.getElementById("registrationSuccess");
-
-
-const registrationError =
-    document.getElementById("registrationError");
-
-
-registrationForm.addEventListener("submit", function (event) {
-
-    event.preventDefault();
-
-
-    /* Hide old messages */
-
-    registrationSuccess.classList.add("d-none");
-
-    registrationError.classList.add("d-none");
-
-
-    /* Get form values */
-
-    const name =
-        document.getElementById("participantName")
-            .value.trim();
-
-
-    const email =
-        document.getElementById("participantEmail")
-            .value.trim();
-
-
-    const mobile =
-        document.getElementById("participantMobile")
-            .value.trim();
-
-
-    const department =
-        document.getElementById("department")
-            .value;
-
-
-    const year =
-        document.getElementById("studentYear")
-            .value;
-
-
-    const eventName =
-        selectedEvent.value;
-
-
-    /* =================================================
-       VALIDATION
-    ================================================= */
-
-    if (
-        name === "" ||
-        email === "" ||
-        mobile === "" ||
-        department === "" ||
-        year === "" ||
-        eventName === ""
-    ) {
-
-        registrationError.textContent =
-            "Please fill in all required fields.";
-
-        registrationError.classList.remove("d-none");
-
-        return;
-
-    }
-
-
-    /* Mobile validation */
-
-    const mobilePattern =
-        /^[0-9]{10}$/;
-
-
-    if (!mobilePattern.test(mobile)) {
-
-        registrationError.textContent =
-            "Please enter a valid 10-digit mobile number.";
-
-        registrationError.classList.remove("d-none");
-
-        return;
-
-    }
-
-
-    /* Email validation */
-
-    const emailPattern =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-    if (!emailPattern.test(email)) {
-
-        registrationError.textContent =
-            "Please enter a valid email address.";
-
-        registrationError.classList.remove("d-none");
-
-        return;
-
-    }
-
-
-    /* =================================================
-       DYNAMIC SUCCESS MESSAGE
-    ================================================= */
-
-    registrationSuccess.innerHTML =
-
-        "<strong>Registration Successful!</strong><br>" +
-
-        "Thank you, " + name + ". " +
-
-        "You have successfully registered for " +
-
-        "<strong>" + eventName + "</strong>.";
-
-
-    registrationSuccess.classList.remove("d-none");
-
-
-    /* Scroll to success message */
-
-    registrationSuccess.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-
-    /* Clear form */
-
-    registrationForm.reset();
-
-});
-
-
-
-/* =====================================================
-   REGISTRATION RESET
-===================================================== */
-
-registrationForm.addEventListener("reset", function () {
-
-    registrationSuccess.classList.add("d-none");
-
-    registrationError.classList.add("d-none");
-
-});
-
-
-
-/* =====================================================
-   CONTACT FORM
-===================================================== */
-
-const contactForm =
-    document.getElementById("contactForm");
-
-
-const contactSuccess =
-    document.getElementById("contactSuccess");
-
-
-contactForm.addEventListener("submit", function (event) {
-
-    event.preventDefault();
-
-
-    const name =
-        document.getElementById("contactName")
-            .value.trim();
-
-
-    const email =
-        document.getElementById("contactEmail")
-            .value.trim();
-
-
-    const subject =
-        document.getElementById("contactSubject")
-            .value.trim();
-
-
-    const message =
-        document.getElementById("contactMessage")
-            .value.trim();
-
-
-    if (
-        name === "" ||
-        email === "" ||
-        subject === "" ||
-        message === ""
-    ) {
-
-        contactSuccess.className =
-            "alert alert-danger";
-
-        contactSuccess.textContent =
-            "Please fill in all contact form fields.";
-
-        contactSuccess.classList.remove("d-none");
-
-        return;
-
-    }
-
-
-    /* Display dynamic success message */
-
-    contactSuccess.className =
-        "alert alert-success";
-
-
-    contactSuccess.textContent =
-        "Thank you, " + name +
-        "! Your enquiry has been submitted successfully.";
-
-
-    contactSuccess.classList.remove("d-none");
-
-
-    /* Reset form */
-
-    contactForm.reset();
-
-});
