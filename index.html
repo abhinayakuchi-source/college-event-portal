@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>College Festival Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <h1>College Fest 2026</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Homepage -->
+  <section id="home" class="banner">
+    <h2>Welcome to College Fest!</h2>
+    <p>✨ Join us for exciting events, competitions, and celebrations ✨</p>
+    <div id="announcements"></div>
+  </section>
+
+  <!-- Event Listings -->
+  <section id="events">
+    <h2>Events</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Dance Competition</h3>
+        <p>Date: Oct 10 | Venue: Auditorium</p>
+        <p>Showcase your talent in an electrifying dance battle.</p>
+        <button onclick="registerEvent('Dance Competition')">Register</button>
+      </div>
+      <div class="card">
+        <h3>Hackathon</h3>
+        <p>Date: Oct 11 | Venue: Lab Block</p>
+        <p>24‑hour coding challenge to solve real‑world problems.</p>
+        <button onclick="registerEvent('Hackathon')">Register</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule">
+    <h2>Schedule</h2>
+    <table>
+      <tr><th>Date</th><th>Event</th><th>Venue</th></tr>
+      <tr><td>Oct 10</td><td>Dance Competition</td><td>Auditorium</td></tr>
+      <tr><td>Oct 11</td><td>Hackathon</td><td>Lab Block</td></tr>
+    </table>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="images/eventimage1.jpeg" alt="Festival Event 1">
+        <div class="caption">Dance Competition – Auditorium</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/eventimage2.jpeg" alt="Festival Event 2">
+        <div class="caption">Hackathon – Lab Block</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <section id="registration">
+    <h2>Register Now</h2>
+    <form id="regForm" class="form-card">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="mobile" placeholder="Mobile" required>
+      <input type="text" id="dept" placeholder="Department/Year" required>
+      <select id="eventSelect" required>
+        <option value="">Select Event</option>
+        <option>Dance Competition</option>
+        <option>Hackathon</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="successMsg"></p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: fest@college.edu | Phone: 9876543210</p>
+    <form id="contactForm" class="form-card">
+      <input type="text" id="cname" placeholder="Your Name" required>
+      <input type="email" id="cemail" placeholder="Your Email" required>
+      <textarea id="cmsg" placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="contactMsg"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 College Fest. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
